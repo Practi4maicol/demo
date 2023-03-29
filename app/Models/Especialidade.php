@@ -14,12 +14,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property PersonasHasEspecialidade[] $personasHasEspecialidades
+ *
+ * @property Persona[] $personas
+ * @property Cita[] $citas
+ *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Especialidade extends Model
 {
-    
+
     static $rules = [
 		'nombre' => 'required',
 		'descripción' => 'required',
@@ -42,6 +46,22 @@ class Especialidade extends Model
     {
         return $this->hasMany('App\Models\PersonasHasEspecialidade', 'Especialidade_id', 'id');
     }
-    
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function personas()
+    {
+        return $this->hasMany('App\Models\Persona', 'espeid', 'id');
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function citas()
+    {
+        return $this->hasMany('App\Models\Cita', 'espeid', 'id');
+    }
+
 
 }

@@ -3,15 +3,15 @@
 
 
         <div class="form-group">
-            {{ Form::label('rol_id') }}
-            {{ Form::select('rol_id',$roles ,$persona->rol_id, ['class' => 'form-control' . ($errors->has('rol_id') ? ' is-invalid' : ''), 'placeholder' => 'rol_id']) }}
-            {!! $errors->first('rol_id', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('rolid') }}
+            {{ Form::select('rolid',$roles ,$persona->rolid, ['class' => 'form-control' . ($errors->has('rolid') ? ' is-invalid' : ''), 'placeholder' => 'rolid']) }}
+            {!! $errors->first('rolid', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
         <div class="form-group">
-            {{ Form::label('especialidades_id') }}
-            {{ Form::select('especialidades_id',$especialidades, $persona->especialidades_id, ['class' => 'form-control' . ($errors->has('especialidades_id') ? ' is-invalid' : ''), 'placeholder' => 'especialidades_id']) }}
-            {!! $errors->first('especialidades_id', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('espeid') }}
+            {{ Form::select('espeid',$especialidades, $persona->espeid, ['class' => 'form-control' . ($errors->has('espeid') ? ' is-invalid' : ''), 'placeholder' => 'espeid']) }}
+            {!! $errors->first('espeid', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
         <div class="form-group">

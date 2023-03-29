@@ -40,6 +40,7 @@ class PersonaController extends Controller
 
         return view('persona.create', compact('persona','roles','especialidades'));
 
+
     }
 
     /**

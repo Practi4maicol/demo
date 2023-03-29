@@ -18,6 +18,9 @@ class Personas extends Migration
             $table->engine="InnoDB";
             $table->bigIncrements('id');
 
+            $table->bigInteger('rolid')->unsigned();
+            $table->bigInteger('espeid')->unsigned();
+
             $table->string('cedula');
             $table->string('nombre');
             $table->string('apellido');
@@ -28,6 +31,9 @@ class Personas extends Migration
             $table->string('direccion');
 
             $table->timestamps();
+
+            $table->foreign('rolid')->references('id')->on('roles')->onDelete("cascade");
+            $table->foreign('espeid')->references('id')->on('especialidades')->onDelete("cascade");
 
         });
     }

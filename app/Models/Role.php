@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $nombre
  *
+ * @property Persona[] $personas
+ * @property Cita[] $citas
+ *
+ *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -28,6 +32,21 @@ class Role extends Model
      */
     protected $fillable = ['nombre'];
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function personas()
+    {
+        return $this->hasMany('App\Models\Persona', 'rolid', 'id');
+    }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function citas()
+    {
+        return $this->hasMany('App\Models\Cita', 'rolid', 'id');
+    }
 
 
 }

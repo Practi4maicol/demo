@@ -24,6 +24,8 @@ class EspecialidadeController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $especialidades->perPage());
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *

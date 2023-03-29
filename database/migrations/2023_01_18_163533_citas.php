@@ -18,16 +18,26 @@ class Citas extends Migration
             $table->engine="InnoDB";
             $table->bigIncrements('id');
 
+            $table->bigInteger('espeid')->unsigned();
+            $table->bigInteger('rolid')->unsigned();
+            $table->bigInteger('perid')->unsigned();
+
+
             $table->string('tituloCita');
             $table->date('fechaInicio')->nullable();
             $table->time('horaInicio')->nullable();
             $table->date('fechaFin')->nullable();
             $table->time('horaFin')->nullable();
             $table->string('descripción');
-
             $table->string('motivoConsulta');
 
             $table->timestamps();
+
+            $table->foreign('espeid')->references('id')->on('especialidades')->onDelete("cascade");
+
+            $table->foreign('rolid')->references('id')->on('roles')->onDelete("cascade");
+
+            $table->foreign('perid')->references('id')->on('personas')->onDelete("cascade");
 
         });
     }

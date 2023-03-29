@@ -36,6 +36,8 @@
                                     <tr>
                                         <th>No</th>
 
+                                        <th>Rol</th>
+                                        <th>Especialidad</th>
 										<th>Cedula</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
@@ -53,6 +55,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
+                                            <td>{{ $persona->role->nombre }}</td>
+                                            <td>{{ $persona->especialidade->nombre}}</td>
 											<td>{{ $persona->cedula }}</td>
 											<td>{{ $persona->nombre }}</td>
 											<td>{{ $persona->apellido }}</td>
